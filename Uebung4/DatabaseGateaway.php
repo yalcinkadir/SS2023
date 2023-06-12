@@ -1,7 +1,11 @@
 <?php
-public function executeQuery($sql, $params = [])
+
+class DatabaseGateaway
 {
-    $stmt = $this->connection->prepare($sql);
-    $stmt->execute($params);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    public function executeQuery($sql, $params = [])
+    {
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
