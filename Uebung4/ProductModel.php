@@ -2,16 +2,16 @@
 
 class ProductModel
 {
-    private $db;
+    private $Gateaway;
 
-    public function __construct($db)
+    public function __construct($Gateaway)
     {
-        $this->db = $db;
+        $this->Gateaway = $Gateaway;
     }
 
     public function getProductTypes()
     {
-        $result = $this->db->executeQuery('SELECT id, name FROM product_types ORDER BY name');
+        $result = $this->Gateaway->executeQuery('SELECT id, name FROM product_types ORDER BY name');
 
         $productTypes = [];
         foreach ($result as $row) {
@@ -25,7 +25,7 @@ class ProductModel
 
     public function getProductsByTypeId($productTypeId)
     {
-        $result = $this->db->executeQuery('SELECT p.id AS productId, t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = :productTypeId', [':productTypeId' => $productTypeId]);
+        $result = $this->Gateaway->executeQuery('SELECT p.id AS productId, t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = :productTypeId', [':productTypeId' => $productTypeId]);
 
         $products = [];
         foreach ($result as $row) {
@@ -53,7 +53,7 @@ class ProductModel
 
     public function getProductById($productId)
     {
-        $result = $this->db->executeQuery('SELECT name FROM products WHERE id = :productId', [':productId' => $productId]);
+        $result = $this->Gateaway->executeQuery('SELECT name FROM products WHERE id = :productId', [':productId' => $productId]);
 
         if (!empty($result)) {
             return ['name' => $result[0]['name']];
