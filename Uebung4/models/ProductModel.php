@@ -24,32 +24,34 @@ class ProductModel
     }
 
     public function getProductsByTypeId($productTypeId): array
-    {
-        $result = $this->db->executeQuery('SELECT p.id AS productId, t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = :productTypeId', [':productTypeId' => $productTypeId]);
+{
+    $sql = 'SELECT p.id AS productId, t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = :productTypeId';
+    $params = [':productTypeId' => $productTypeId];
+    $result = $this->db->executeQuery($sql, $params);
 
-        $products = [];
-        foreach ($result as $row) {
-            $product = [
-                'id' => $row['productId'],
-                'name' => $row['productName']
-            ];
-            $products[] = $product;
-        }
-
-        if (!empty($result)) {
-            $output = [
-                'productType' => $result[0]['productTypeName'],
-                'products' => $products,
-                'url' => "http://localhost/Uebung4/index.php?action=listTypes"
-            ];
-        } else {
-            $output = [
-                'error' => 'No products found for the given typeId',
-                'url' => "http://localhost/Uebung4/index.php?action=listTypes"
-            ];
-        }
-        return $output;
+    $products = [];
+    foreach ($result as $row) {
+        $product = [
+            'id' => $row['productId'],
+            'name' => $row['productName']
+        ];
+        $products[] = $product;
     }
+
+    if (!empty($result)) {
+        $output = [
+            'productType' => $result[0]['productTypeName'],
+            'products' => $products,
+            'url' => "http://localhost/Uebung4/index.php?action=listTypes"
+        ];
+    } else {
+        $output = [
+            'error' => 'No products found for the given typeId',
+            'url' => "http://localhost/Uebung4/index.php?action=listTypes"
+        ];
+    }
+    return $output;
+}
 
     public function getProductById($productId)
     {
