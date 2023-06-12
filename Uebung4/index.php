@@ -16,6 +16,7 @@ $db = new Database($config['database']);
 $model = new ProductModel($db);
 $controller = new Controller($model);
 $cart = new Cart();
+$controller->handleRequest();
 
 $action = $_GET['action'] ?? '';
 $typeId = $_GET['typeId'] ?? null;
