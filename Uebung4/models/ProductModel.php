@@ -9,7 +9,7 @@ class ProductModel
         $this->db = new DatabaseGateway($db);
     }
 
-    public function getProductTypes()
+    public function getProductTypes(): array
     {
         $result = $this->db->executeQuery('SELECT id, name FROM product_types ORDER BY name');
 
@@ -23,7 +23,7 @@ class ProductModel
         return $productTypes;
     }
 
-    public function getProductsByTypeId($productTypeId)
+    public function getProductsByTypeId($productTypeId): array
     {
         $result = $this->db->executeQuery('SELECT p.id AS productId, t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = :productTypeId', [':productTypeId' => $productTypeId]);
 
