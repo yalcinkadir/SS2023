@@ -7,13 +7,13 @@ require_once 'config.php';
 require_once 'Database.php';
 require_once 'ProductType.php';
 require_once 'Product.php';
-require_once 'ProductService.php';
+require_once 'ProductModel.php';
 require_once 'Controller.php';
 require_once 'Cart.php';
 
 $config = require 'config.php';
 $db = new Database($config['database']);
-$model = new ProductService($db);
+$model = new ProductModel($db);
 $controller = new Controller($model);
 $cart = new Cart();
 
