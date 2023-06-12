@@ -9,14 +9,30 @@ class ProductService
         $this->model = $model;
     }
 
-    public function getProductTypes()
+    public function getProductTypes(): array
     {
-        return $this->model->getProductTypes();
+        $productTypesData = $this->model->getProductTypes();
+        $productTypes = [];
+
+        foreach ($productTypesData as $productTypeData) {
+            $productTypes[] = new ProductTypeDTO($productTypeData['name'], $productTypeData['url']);
+        }
+
+        return $productTypes;
     }
 
-    public function getProductsByTypeId($typeId)
+
+    public function getProductsByTypeId($typeId): array
     {
-        return $this->model->getProductsByTypeId($typeId);
+        $productsData = $this->model->getProductsByTypeId($typeId);
+        $products = [];
+
+        foreach ($productsData as $productData) {
+            $products[] = new ProductDTO($productData['id'], $productData['name']);
+        }
+
+        return $products;
     }
+
 
 }
