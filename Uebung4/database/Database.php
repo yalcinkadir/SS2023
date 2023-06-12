@@ -6,8 +6,10 @@ class Database
 
     public function __construct($config)
     {
+        $dsn = 'mysql:host=' . $config['host'] . ';dbname=' . $config['dbname'] . ';charset=' . $config['charset']; // UTF-8-Kodierung hinzugefügt
+
         $this->connection = new PDO(
-            'mysql:host=' . $config['host'] . ';dbname=' . $config['dbname'],
+            $dsn,
             $config['username'],
             $config['password']
         );
@@ -17,5 +19,4 @@ class Database
     {
         return $this->connection;
     }
-
 }
