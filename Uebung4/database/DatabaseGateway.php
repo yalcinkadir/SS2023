@@ -1,4 +1,5 @@
 <?php
+
 class DatabaseGateway
 {
     private $connection;
@@ -14,6 +15,13 @@ class DatabaseGateway
         return $this->executeQuery($sql);
     }
 
+    private function executeQuery($sql, $params = [])
+    {
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getProductsByTypeId($productTypeId)
     {
         $sql = 'SELECT p.id AS productId, t.name AS productTypeName, p.name AS productName FROM product_types t JOIN products p ON t.id = p.id_product_types WHERE t.id = :productTypeId';
@@ -24,12 +32,5 @@ class DatabaseGateway
     {
         $sql = 'SELECT name FROM products WHERE id = :productId';
         return $this->executeQuery($sql, [':productId' => $productId]);
-    }
-
-    private function executeQuery($sql, $params = [])
-    {
-        $stmt = $this->connection->prepare($sql);
-        $stmt->execute($params);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

@@ -2,8 +2,8 @@
 
 class ProductType
 {
-    private $id = "test";
-    private $name = "test";
+    private $id;
+    private $name;
 
     public function __construct($id, $name)
     {

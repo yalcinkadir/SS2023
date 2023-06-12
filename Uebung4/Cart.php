@@ -9,7 +9,7 @@ class Cart
         }
     }
 
-    public function addArticle($articleId)
+    public function addArticle($articleId): true
     {
         if (array_key_exists($articleId, $_SESSION['cart'])) {
             $_SESSION['cart'][$articleId]++;
@@ -19,7 +19,7 @@ class Cart
         return true;
     }
 
-    public function removeArticle($articleId)
+    public function removeArticle($articleId): bool
     {
         if (array_key_exists($articleId, $_SESSION['cart'])) {
             if ($_SESSION['cart'][$articleId] > 1) {
@@ -32,14 +32,15 @@ class Cart
         return false;
     }
 
-    public function listCart($productService)
+    public function listCart($model): array
     {
         $cartItems = [];
         foreach ($_SESSION['cart'] as $productId => $quantity) {
-            $product = $productService->getProductById($productId);
+            $product = $model->getProductById($productId);
             $cartItems[] = ['articleName' => $product['name'], 'amount' => $quantity];
         }
         return $cartItems;
     }
 }
+
 ?>
