@@ -1,7 +1,14 @@
 <?php
 
-class DatabaseGateaway
+class DatabaseGateway
 {
+    private $connection;
+
+    public function __construct($connection)
+    {
+        $this->connection = $connection;
+    }
+
     public function executeQuery($sql, $params = [])
     {
         $stmt = $this->connection->prepare($sql);
