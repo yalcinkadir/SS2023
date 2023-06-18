@@ -8,4 +8,21 @@ include 'src/config/config.php';
 require 'vendor/autoload.php';
 
 $controller = new ProductsListController();
-$controller->route();
+
+// Route Warenkorb Aktionen
+if (isset($_GET['cartAction'])) {
+    switch ($_GET['cartAction']) {
+        case 'add':
+            $controller->addProductToCart($_GET['productId'], $_GET['quantity']);
+            break;
+        case 'remove':
+            $controller->removeProductFromCart($_GET['productId']);
+            break;
+        case 'list':
+            echo json_encode($controller->listCart());
+            break;
+    }
+} else {
+    // Route normale Produktaktionen
+    $controller->route();
+}
