@@ -1,7 +1,10 @@
 <?php
 
-use MusterUebung3\src\Controller\ProductsListController;
-use MusterUebung3\src\Controller\CartController;
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+use MusterUebung3\Controller\ProductsListController;
+use MusterUebung3\Controller\CartController;
 
 error_reporting(E_ERROR);
 ini_set("display_errors", 1);
