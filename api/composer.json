@@ -1,0 +1,15 @@
+{
+    "name": "fhtechnikum/uebung3_4",
+    "autoload": {
+        "psr-4": {
+            "Fhtechnikum\\Uebung34\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "fhtechnikum",
+            "email": "lammer@technikum-wien.at"
+        }
+    ],
+    "require": {}
+}

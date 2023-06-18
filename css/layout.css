@@ -1,0 +1,10 @@
+#types-list .list-group-item{
+    cursor: pointer;
+}
+
+#products-list .card-title {
+    font-size: 14px;
+}
+#products-list .card-text {
+    font-size: 12px;
+}
