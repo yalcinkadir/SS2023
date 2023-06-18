@@ -1,9 +1,9 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\Gateways;
+namespace MusterUebung3\src\Gateways;
 
-use Fhtechnikum\Uebung34\Models\ProductModel;
-use Fhtechnikum\Uebung34\Models\ProductTypeModel;
+use MusterUebung3\src\Models\ProductModel;
+use MusterUebung3\src\Models\ProductTypeModel;
 use PDO;
 
 class ProductsReadDBGateway implements ProductsReadGatewayInterface

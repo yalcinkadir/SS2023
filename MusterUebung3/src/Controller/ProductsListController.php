@@ -1,11 +1,11 @@
 <?php
-namespace Fhtechnikum\Uebung34\Controller;
-use Fhtechnikum\Uebung34\DTOs\ProductDTO;
-use Fhtechnikum\Uebung34\DTOs\ProductListDTO;
-use Fhtechnikum\Uebung34\DTOs\ProductTypeDTO;
-use Fhtechnikum\Uebung34\Gateways\ProductsReadDBGateway;
-use Fhtechnikum\Uebung34\Services\ProductsService;
-use Fhtechnikum\Uebung34\Views\JsonView;
+namespace MusterUebung3\src\Controller;
+use MusterUebung3\src\DTOs\ProductDTO;
+use MusterUebung3\src\DTOs\ProductListDTO;
+use MusterUebung3\src\DTOs\ProductTypeDTO;
+use MusterUebung3\src\Gateways\ProductsReadDBGateway;
+use MusterUebung3\src\Services\ProductsService;
+use MusterUebung3\src\Views\JsonView;
 
 class ProductsListController
 {

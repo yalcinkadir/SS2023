@@ -1,6 +1,6 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\Gateways;
+namespace MusterUebung3\src\Gateways;
 
 interface ProductsReadGatewayInterface
 {

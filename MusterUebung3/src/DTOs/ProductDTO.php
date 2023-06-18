@@ -1,6 +1,6 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\DTOs;
+namespace MusterUebung3\src\DTOs;
 
 class ProductDTO
 {

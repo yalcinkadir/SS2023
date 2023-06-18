@@ -1,14 +1,14 @@
 {
-    "name": "fhtechnikum/uebung3_4",
+    "name": "Hausuebung4",
     "autoload": {
         "psr-4": {
-            "Fhtechnikum\\Uebung34\\": "src/"
+            "MusterUebung3\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "fhtechnikum",
-            "email": "lammer@technikum-wien.at"
+            "name": "YALCIN_IWANCSICH",
+            "email": "yalcinkadir@live.com"
         }
     ],
     "require": {}

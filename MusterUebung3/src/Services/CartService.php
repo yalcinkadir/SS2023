@@ -1,8 +1,8 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\Services;
+namespace MusterUebung3\src\Services;
 
-use Fhtechnikum\Uebung34\Models\CartModel;
+use MusterUebung3\src\Models\CartModel;
 
 class CartService
 {

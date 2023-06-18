@@ -1,5 +1,5 @@
 <?php
-namespace Fhtechnikum\Uebung34\Models;
+namespace MusterUebung3\src\Models;
 class ProductTypeModel
 {
     public $name;

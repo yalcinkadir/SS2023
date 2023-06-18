@@ -1,6 +1,6 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\Services;
+namespace MusterUebung3\src\Services;
 
 class ProductsService
 {
