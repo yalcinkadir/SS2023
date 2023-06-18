@@ -1,6 +1,6 @@
 <?php
 
-use Fhtechnikum\Uebung34\Controller\ProductsListController;
+use SS2023\Controller\ProductsListController;
 
 error_reporting(E_ERROR);
 ini_set("display_errors", 1);

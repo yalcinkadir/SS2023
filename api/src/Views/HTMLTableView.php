@@ -1,6 +1,6 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\Views;
+namespace SS2023\Views;
 
 class HTMLTableView implements ViewInterface
 {

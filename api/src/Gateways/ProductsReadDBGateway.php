@@ -1,9 +1,9 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\Gateways;
+namespace SS2023\Gateways;
 
-use Fhtechnikum\Uebung34\Models\ProductModel;
-use Fhtechnikum\Uebung34\Models\ProductTypeModel;
+use SS2023\Models\ProductModel;
+use SS2023\Models\ProductTypeModel;
 use PDO;
 
 class ProductsReadDBGateway implements ProductsReadGatewayInterface
@@ -17,7 +17,20 @@ class ProductsReadDBGateway implements ProductsReadGatewayInterface
         $password
     )
     {
-        $this->pdo = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $password);
+        try {
+            $pdo = new PDO('mysql:host=DBHost;dbname=DBName', 'DBUsername', 'DBPassword');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+            $stmt = $pdo->query("SELECT 1");
+            $result = $stmt->fetch();
+        
+            echo "Datenbankverbindung erfolgreich.";
+        } catch (PDOException $e) {
+            die("Verbindungsfehler: " . $e->getMessage());
+        }
+        
+        
+        
     }
 
     public function getAllProductTypes()

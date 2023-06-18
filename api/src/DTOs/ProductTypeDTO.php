@@ -1,6 +1,6 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\DTOs;
+namespace SS2023\DTOs;
 
 class ProductTypeDTO
 {

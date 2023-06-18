@@ -1,6 +1,6 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\Services;
+namespace SS2023\Services;
 
 class ProductsService
 {

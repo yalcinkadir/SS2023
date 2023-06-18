@@ -1,6 +1,6 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\Gateways;
+namespace SS2023\Gateways;
 
 interface ProductsReadGatewayInterface
 {

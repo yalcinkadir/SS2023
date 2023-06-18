@@ -1,6 +1,6 @@
 <?php
 
-namespace Fhtechnikum\Uebung34\Models;
+namespace SS2023\Models;
 
 class ProductModel
 {
