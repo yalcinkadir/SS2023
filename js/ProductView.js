@@ -33,7 +33,6 @@ class ProductView {
         return productView.createView();
     }
     
-
     getImage() {
         return $("<img src='img/"+this.product.id+".png' />");
     }
