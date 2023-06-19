@@ -1,5 +1,7 @@
 <?php
+
 namespace SS2023\Controller;
+
 use SS2023\DTOs\ProductDTO;
 use SS2023\DTOs\ProductListDTO;
 use SS2023\DTOs\ProductTypeDTO;

@@ -1,14 +1,14 @@
 {
-    "name": "fhtechnikum/uebung3_4",
+    "name": "ss2023/api",
     "autoload": {
         "psr-4": {
-            "Fhtechnikum\\Uebung34\\": "src/"
+            "SS2023\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "fhtechnikum",
-            "email": "lammer@technikum-wien.at"
+            "name": "ss2023",
+            "email": "yalcinkadir@live.com"
         }
     ],
     "require": {}

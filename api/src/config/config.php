@@ -1,7 +1,7 @@
 <?php
 define("DBHost", "localhost");
-define("DBName", "SS2023FEUe3");
+define("DBName", "BackendDatabase");
 define("DBPassword", "");
 define("DBUsername", "root");
 
-define("API_URL", "https://localhost/SS2023/api/");
+define("API_URL", "http://localhost/SS2023/api/");
