@@ -10,11 +10,6 @@ SS2023
 │  ├─ vcs.xml
 │  └─ workspace.xml
 ├─ LV06_Uebung4.pdf
-├─ Print
-│  ├─ api.pdf
-│  ├─ css.pdf
-│  ├─ index.html.pdf
-│  └─ js.pdf
 ├─ README.md
 ├─ api
 │  ├─ .DS_Store

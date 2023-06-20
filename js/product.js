@@ -19,6 +19,9 @@ $(document).ready(function () {
         $errorMessage.addClass("show");
       }
     });
+
+    const shoppingCart = new ShoppingCart();
+    shoppingCart.updateCartDisplay();
   }
 
   function createProductItem(product) {
@@ -46,19 +49,6 @@ $(document).ready(function () {
     $("#cart-modal").modal("show");
   });
 
-  $("#login-form").submit(function (event) {
-    event.preventDefault();
-    const email = $("input[name='email']").val();
-    const password = $("input[name='password']").val();
-    loginUser(email, password);
-  });
 });
 
-function loginUser(email, password) {
-  // Hier kannst du den Code zum Anmelden des Benutzers implementieren
-  // Zum Beispiel eine Ajax-Anfrage an den Server senden
-  // und die Anmeldeinformationen überprüfen
-  // Anschließend kannst du den Anmeldestatus in der Anzeige aktualisieren
-  // Beispiel:
-  $("#login-status").text("Sie sind mit dem Benutzer " + email + " angemeldet");
-}
+

@@ -1,6 +1,6 @@
 // JavaScript-Code in index.js
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 
   if (!window.sessionStorage.getItem('products')) {
@@ -23,13 +23,13 @@ $(document).ready(function() {
   productsListView.loadProducts();
 
   // Füge einen Klick-Eventhandler für den Warenkorb-Button hinzu
-  $("#cart-button").click(function() {
+  $("#cart-button").click(function () {
     // Öffne das Warenkorb-Modal
     $("#cart-modal").modal("show");
   });
 
   // Füge einen Submit-Eventhandler für das Anmeldeformular hinzu
-  $("#login-form").submit(function(event) {
+  $("#login-form").submit(function (event) {
     event.preventDefault();
     const email = $("input[name='email']").val();
     const password = $("input[name='password']").val();
