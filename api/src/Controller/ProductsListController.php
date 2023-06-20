@@ -8,6 +8,7 @@ use SS2023\DTOs\ProductTypeDTO;
 use SS2023\Gateways\ProductsReadDBGateway;
 use SS2023\Services\ProductsService;
 use SS2023\Views\JsonView;
+use SS2023\config\Config;
 
 class ProductsListController
 {

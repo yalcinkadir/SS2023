@@ -1,7 +1,9 @@
 class ProductView {
     constructor(product, shoppingCart) { 
+        // burada shoppingCard beklemeistin ama ProductListView de vermemissin
         this.product = product;
         this.shoppingCart = shoppingCart;
+        //this.addProduct = addProduct;
     }
 
     createView() {
@@ -15,6 +17,12 @@ class ProductView {
         
         // Define the action to take when the button is clicked.
         $button.on('click', () => {
+            console.log(this.product);
+
+            // boyle direk yazamazsin 
+           $('#success_message').show();
+
+            // zani bu kisim ve burada session ekelence addProduct icinde
             this.shoppingCart.addProduct(this.product);
         });
         
@@ -29,11 +37,12 @@ class ProductView {
 
     createProductItem(product) {
         console.log(product.name); // Add this line to log the product name
-        const productView = new ProductView(product);
+        const productView = new ProductView(product, this.shoppingCart);
         return productView.createView();
     }
     
     getImage() {
         return $("<img src='img/"+this.product.id+".png' />");
     }
+
 }

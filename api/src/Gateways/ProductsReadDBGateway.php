@@ -18,25 +18,22 @@ class ProductsReadDBGateway implements ProductsReadGatewayInterface
     )
     {
         try {
-            $pdo = new PDO('mysql:host=DBHost;dbname=DBName', 'DBUsername', 'DBPassword');
+            $pdo = new PDO('mysql:host=localhost;dbname=BackendDatabase', 'root', '');
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
             $stmt = $pdo->query("SELECT 1");
             $result = $stmt->fetch();
         
-            echo "Datenbankverbindung erfolgreich.";
         } catch (PDOException $e) {
             die("Verbindungsfehler: " . $e->getMessage());
         }
-        
-        
         
     }
 
     public function getAllProductTypes()
     {
         $sql = "SELECT id, name FROM product_types ORDER BY name";
-        $statement = $this->pdo->prepare($sql);
+        $statement = $pdo->prepare($sql);
         $statement->execute();
 
         $productTypesList = $statement->fetchAll(PDO::FETCH_CLASS);
@@ -61,7 +58,12 @@ class ProductsReadDBGateway implements ProductsReadGatewayInterface
     public function getProductsByTypeId($productTypeId) {
         $sql = "SELECT name, id FROM products 
             WHERE id_product_types = :productTypeId";
-        $statement = $this->pdo->prepare($sql);
+        
+        if($pdo == null) {
+            $pdo = new PDO('mysql:host=localhost;dbname=BackendDatabase', 'root', '');
+
+        }
+        $statement = $pdo->prepare($sql);
         $statement->bindParam(':productTypeId', $productTypeId);
         $statement->execute();
 
@@ -86,7 +88,11 @@ class ProductsReadDBGateway implements ProductsReadGatewayInterface
     public function getProductTypeName($productTypeId) {
         $sql = "SELECT name FROM product_types 
             WHERE id = :productTypeId";
-        $statement = $this->pdo->prepare($sql);
+        if($pdo == null) {
+            $pdo = new PDO('mysql:host=localhost;dbname=BackendDatabase', 'root', '');
+        }
+       
+        $statement = $pdo->prepare($sql);
         $statement->bindParam(':productTypeId', $productTypeId);
         $statement->execute();
 

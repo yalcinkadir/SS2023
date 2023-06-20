@@ -1,6 +1,13 @@
 // JavaScript-Code in index.js
 
 $(document).ready(function() {
+
+
+  if (!window.sessionStorage.getItem('products')) {
+    window.sessionStorage.setItem('products', JSON.stringify([]));
+  }
+
+
   // Erstelle eine Instanz der ProductTypesView
   const productTypesView = new ProductTypesView("types-list");
 
@@ -12,7 +19,7 @@ $(document).ready(function() {
   productsListView.setUrl(API_URL + "?action=listproductsbytypeid&typeId=1");
 
   // Lade die Produkttypen und Produkte
-  productTypesView.loadProductTypes();
+  //productTypesView.loadProductTypes();
   productsListView.loadProducts();
 
   // Füge einen Klick-Eventhandler für den Warenkorb-Button hinzu
@@ -31,11 +38,4 @@ $(document).ready(function() {
   });
 });
 
-function loginUser(email, password) {
-  // Hier kannst du den Code zum Anmelden des Benutzers implementieren
-  // Zum Beispiel eine Ajax-Anfrage an den Server senden
-  // und die Anmeldeinformationen überprüfen
-  // Anschließend kannst du den Anmeldestatus in der Anzeige aktualisieren
-  // Beispiel:
-  $("#login-status").text("Sie sind mit dem Benutzer " + email + " angemeldet");
-}
+

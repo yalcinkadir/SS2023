@@ -24,6 +24,7 @@ class ProductTypesView {
     }
   
     createListEntry(productTypesItem) {
+      console.log("createEntriy");
       let $listEntry = $("<li>" + productTypesItem.productType + "</li>");
       $listEntry.addClass("list-group-item");
       $listEntry.addClass("cursor-pointer");
@@ -42,7 +43,7 @@ class ProductTypesView {
     }
   }
   
-  $(document).ready(function () {
+ /* $(document).ready(function () {
     const productTypesView = new ProductTypesView(API_URL + "?action=listtypes", "types-list", productsListView);
     productTypesView.drawListGroup();
-  });
+  }); */
